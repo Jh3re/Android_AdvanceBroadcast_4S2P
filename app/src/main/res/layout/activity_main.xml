@@ -10,7 +10,7 @@
         android:id="@+id/txtAirplaneMode"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="196dp"
+        android:layout_marginTop="188dp"
         android:text="Hello World!"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -20,11 +20,22 @@
         android:id="@+id/txtTimeTick"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="104dp"
+        android:layout_marginTop="88dp"
         android:text="TextView"
         app:layout_constraintEnd_toEndOf="@+id/txtAirplaneMode"
-        app:layout_constraintHorizontal_bias="0.736"
+        app:layout_constraintHorizontal_bias="0.684"
         app:layout_constraintStart_toStartOf="@+id/txtAirplaneMode"
         app:layout_constraintTop_toBottomOf="@+id/txtAirplaneMode" />
+
+    <TextView
+        android:id="@+id/txtWifiMode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="84dp"
+        android:text="TextView"
+        app:layout_constraintEnd_toEndOf="@+id/txtTimeTick"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/txtTimeTick"
+        app:layout_constraintTop_toBottomOf="@+id/txtTimeTick" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
