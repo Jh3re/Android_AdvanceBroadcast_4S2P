@@ -27,6 +27,14 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    // Configurar un BroadcastReceiver para el evento de cambio de tiempo a este se le denomina
+    // Time Tick
+    private val getTimeChange = object: BroadcastReceiver() {
+        override fun onReceive(context: Context?, intent: Intent?) {
+            binding.txtTimeTick.text = "El tiempo ha cambiado"
+        }
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
@@ -37,11 +45,13 @@ class MainActivity : AppCompatActivity() {
         super.onStart()
         // Registrar el BroadcastReceiver
         registerReceiver(getAirplaneMode, IntentFilter(Intent.ACTION_AIRPLANE_MODE_CHANGED))
+        registerReceiver(getTimeChange, IntentFilter(Intent.ACTION_TIME_TICK))
     }
 
     override fun onStop() {
         super.onStop()
         // Quitar el registro
         unregisterReceiver(getAirplaneMode)
+        unregisterReceiver(getTimeChange)
     }
 }
