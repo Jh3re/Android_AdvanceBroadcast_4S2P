@@ -6,4 +6,44 @@
     android:layout_height="match_parent"
     tools:context=".BatteryActivity">
 
+    <TextView
+        android:id="@+id/txtBatteryPercentage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="%"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtBatteryMessage" />
+
+    <ProgressBar
+        android:id="@+id/pbBatteryLevel"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="271dp"
+        android:layout_height="26dp"
+        android:background="#FDFDFD"
+        android:backgroundTint="#ED4545"
+        android:progressBackgroundTint="#E6DB0F"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtBatteryPercentage"
+        app:layout_constraintVertical_bias="0.039" />
+
+    <TextView
+        android:id="@+id/txtBatteryMessage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="76dp"
+        android:text="Mensaje"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
