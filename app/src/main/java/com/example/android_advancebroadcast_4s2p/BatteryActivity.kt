@@ -4,6 +4,7 @@ import android.content.Intent
 import android.content.IntentFilter
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.provider.Settings
 import com.example.android_advancebroadcast_4s2p.databinding.ActivityBatteryBinding
 
 class BatteryActivity : AppCompatActivity() {
@@ -15,6 +16,14 @@ class BatteryActivity : AppCompatActivity() {
         binding = ActivityBatteryBinding.inflate(layoutInflater)
         setContentView(binding.root)
         myBroadcast = MyBroadcast(binding)
+        binding.fabSettings.setOnClickListener {
+            openSystemSettings()
+        }
+    }
+
+    private fun openSystemSettings() {
+        val intent = Intent(Settings.ACTION_MANAGE_WRITE_SETTINGS)
+        startActivity(intent)
     }
 
     override fun onStart() {
