@@ -17,6 +17,23 @@ class MyBroadcast(
             Intent.ACTION_BATTERY_CHANGED -> showBatteryLevel(intent)
             Intent.ACTION_BATTERY_LOW -> configureBatteryLow(context, intent)
         }
+        if(intent != null) BatteryHealth(intent)
+
+
+    }
+
+    private fun BatteryHealth(intent: Intent?){
+        val batteryHealth = intent?.getIntExtra(BatteryManager.EXTRA_HEALTH, BatteryManager.BATTERY_HEALTH_UNKNOWN)
+        val healthBattery = when (batteryHealth) {
+            BatteryManager.BATTERY_HEALTH_GOOD -> "GOOD"
+            BatteryManager.BATTERY_HEALTH_DEAD -> "DEAD"
+            BatteryManager.BATTERY_HEALTH_OVERHEAT -> "OVER_HEATED"
+            BatteryManager.BATTERY_HEALTH_OVER_VOLTAGE -> "OVER_VOLTAGE"
+            BatteryManager.BATTERY_HEALTH_UNSPECIFIED_FAILURE -> "FAILED"
+            BatteryManager.BATTERY_HEALTH_UNKNOWN -> "UNKNOWN"
+            else -> "Desc."
+        }
+        batteryHealth.let {bindingObject.txtBatteryMessageState.text = "Estado de la bateria: $healthBattery"}
     }
 
     private fun configureBatteryLow(context: Context?,intent: Intent) {
